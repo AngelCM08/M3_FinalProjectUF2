@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 
 public class Cactus {
     private double xPos;
-    private Image image;
+    private final Image image;
 
     public Cactus(double xPos, Image image) {
         this.xPos = xPos;
