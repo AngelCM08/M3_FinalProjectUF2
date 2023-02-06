@@ -4,10 +4,12 @@ import javafx.scene.image.Image;
 
 public class Cactus {
     private double xPos;
+    private int generation_height;
     private final Image image;
 
-    public Cactus(double xPos, Image image) {
+    public Cactus(double xPos, int generation_height, Image image) {
         this.xPos = xPos;
+        this.generation_height = generation_height;
         this.image = image;
     }
 
@@ -21,11 +23,15 @@ public class Cactus {
             case 5 -> 2.5;
             default -> 0;
         };
-        xPos += coef;
+        xPos -= 2;//coef;
     }
 
     public double getxPos() {
         return xPos;
+    }
+
+    public int getGeneration_height() {
+        return generation_height;
     }
 
     public Image getImage() {

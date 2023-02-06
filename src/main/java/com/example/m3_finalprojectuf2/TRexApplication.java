@@ -9,12 +9,13 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 public class TRexApplication extends Application {
     public final double YMAX = 1100;
+    public CactusController cactusController = new CactusController();
+    public int level = 1;
+
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage){
         Group root = new Group();
         Scene scene = new Scene(root);
         stage.setTitle("Chrome T-Rex");
@@ -27,6 +28,7 @@ public class TRexApplication extends Application {
 
         Image tRex = new Image("tRex.png", 90, 90, false, false);
         Image bg = new Image("landscape.jpg", YMAX, 300, false, false);
+        cactusController.newCactus(YMAX);
 
         //root.getChildren().addAll(new ImageView(bg));
         final long startNanoTime = System.nanoTime();
@@ -37,7 +39,9 @@ public class TRexApplication extends Application {
                 // Clear the canvas
                 gc.clearRect(0, 0, YMAX,300);
 
-                // background image clears canvas
+                cactusController.cactus.decreaseXPos(level);
+                if(cactusController.cactus.getxPos() <= -cactusController.cactus.getGeneration_height()) cactusController.newCactus(YMAX);
+                gc.drawImage( cactusController.cactus.getImage(), cactusController.cactus.getxPos(), cactusController.cactus.getGeneration_height());
                 gc.drawImage( tRex, 100, 150);
             }
         }.start();

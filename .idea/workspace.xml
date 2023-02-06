@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/m3_finalprojectuf2/Cactus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/m3_finalprojectuf2/Cactus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/m3_finalprojectuf2/CactusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/m3_finalprojectuf2/CactusController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/m3_finalprojectuf2/TRexApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/m3_finalprojectuf2/TRexApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/medium_cactus.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/med_cactus.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +29,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2L39Yd6Cyzh9y8GD4RMZIDEs4qv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -38,6 +46,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -48,6 +57,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/com/example/m3_finalprojectuf2" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -76,18 +88,8 @@
     <option name="localTasksCounter" value="3" />
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First commit" />
     <option name="LAST_COMMIT_MESSAGE" value="First commit" />
   </component>
