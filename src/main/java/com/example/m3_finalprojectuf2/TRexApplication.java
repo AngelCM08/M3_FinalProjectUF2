@@ -7,11 +7,13 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class TRexApplication extends Application {
-    public final double YMAX = 1100;
-    public CactusController cactusController = new CactusController();
+    public final int YMAX = 1100;
+    public CactusController cactusController = new CactusController(YMAX);
+    Cactus cactus;
     public int level = 1;
 
     @Override
@@ -28,21 +30,22 @@ public class TRexApplication extends Application {
 
         Image tRex = new Image("tRex.png", 90, 90, false, false);
         Image bg = new Image("landscape.jpg", YMAX, 300, false, false);
-        cactusController.newCactus(YMAX);
+        cactusController.newCactus();
+        cactus = cactusController.getCactus();
 
+        gc.drawImage( tRex, 100, 150);
         //root.getChildren().addAll(new ImageView(bg));
-        final long startNanoTime = System.nanoTime();
-        new AnimationTimer()
-        {
-            public void handle(long currentNanoTime)
-            {
+        new AnimationTimer() {
+            public void handle(long currentNanoTime) {
                 // Clear the canvas
                 gc.clearRect(0, 0, YMAX,300);
 
-                cactusController.cactus.decreaseXPos(level);
-                if(cactusController.cactus.getxPos() <= -cactusController.cactus.getGeneration_height()) cactusController.newCactus(YMAX);
-                gc.drawImage( cactusController.cactus.getImage(), cactusController.cactus.getxPos(), cactusController.cactus.getGeneration_height());
-                gc.drawImage( tRex, 100, 150);
+                cactus.decreaseXPos(level);
+                if(cactus.getxPos() <= cactus.getGeneration_height()) {
+                    cactusController.newCactus();
+                    cactus = cactusController.getCactus();
+                }
+                gc.drawImage(cactus.getImage(), cactus.getxPos(), cactus.getGeneration_height());
             }
         }.start();
 
