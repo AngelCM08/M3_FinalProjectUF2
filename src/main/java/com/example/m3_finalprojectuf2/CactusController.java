@@ -6,7 +6,7 @@ import javafx.scene.image.ImageView;
 import java.util.Random;
 
 public class CactusController {
-    private int cactus_index;
+    int cactus_index;
     private final ImageView[] cactuses_img = {
                 new ImageView(new Image("cactus1.jpg", 50, 130, false, false)),
                 new ImageView(new Image("cactus2.jpg", 50, 120, false, false)),
@@ -27,8 +27,7 @@ public class CactusController {
     }
 
     public Cactus changeImage(int ANCHO_MAX) {
-        Random rd = new Random();
-        cactus_index = rd.nextInt(8);
+        System.out.println(cactus_index);
         cactus[cactus_index].image().setX(ANCHO_MAX);
         return cactus[cactus_index];
     }

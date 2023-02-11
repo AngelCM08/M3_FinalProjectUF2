@@ -21,7 +21,7 @@ public class Cactus {
             case 5 -> 2.5;
             default -> 0;
         };
-        image.setX(image.getX() - 2);
+        image.setX(image.getX() - 3);
     }
 
     public int getGeneration_height() {

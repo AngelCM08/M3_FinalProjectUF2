@@ -13,8 +13,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
+import java.util.Random;
+
 public class TRexApplication extends Application {
     //Coding elements
+    Random rd = new Random();
     public final int ANCHO_MAX = 1100;
     public CactusController cactusController = new CactusController();
     Cactus cactus;
@@ -22,7 +25,7 @@ public class TRexApplication extends Application {
     public int level = 1;
     private boolean isJumping = false;
     private double jumpVelocity = 0.0;
-    private double gravity = 0.5;
+    private double gravity = 0.1;
     private int score = 0;
 
     //Graphic elements
@@ -34,6 +37,7 @@ public class TRexApplication extends Application {
     @Override
     public void start(Stage stage){
         cactus = cactusController.changeImage(ANCHO_MAX);
+        System.out.println(-cactus.image().getImage().getWidth());
 
         stage.setTitle("Chrome T-Rex");
         stage.setScene(scene);
@@ -51,7 +55,7 @@ public class TRexApplication extends Application {
         scene.setOnKeyPressed(event -> {
             if (event.getCode().equals(KeyCode.SPACE) && !isJumping) {
                 isJumping = true;
-                jumpVelocity = -20;
+                jumpVelocity = -7;
             }
         });
 
@@ -83,8 +87,11 @@ public class TRexApplication extends Application {
 
         // Actualizar la posición del obstáculo
         cactus.decreaseXPos(level);
+        //System.out.println("imageX: "+cactus.image().getX());
         if(cactus.image().getX() <= -cactus.image().getImage().getWidth()) {
+            cactusController.cactus_index = rd.nextInt(8);
             cactus = cactusController.changeImage(ANCHO_MAX);
+            cactus.image().setY(cactus.getGeneration_height());
         }
 
         // Detectar colisiones
