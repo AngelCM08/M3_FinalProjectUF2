@@ -5,4 +5,6 @@ module com.example.m3_finalprojectuf2 {
 
     opens com.example.m3_finalprojectuf2 to javafx.fxml;
     exports com.example.m3_finalprojectuf2;
+    exports tests;
+    opens tests to javafx.fxml;
 }

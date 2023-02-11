@@ -1,13 +1,14 @@
 package com.example.m3_finalprojectuf2;
 
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class Cactus {
     private double xPos;
-    private int generation_height;
-    private final Image image;
+    private final int generation_height;
+    private final ImageView image;
 
-    public Cactus(double xPos, int generation_height, Image image) {
+    public Cactus(double xPos, int generation_height, ImageView image) {
         this.xPos = xPos;
         this.generation_height = generation_height;
         this.image = image;
@@ -23,7 +24,7 @@ public class Cactus {
             case 5 -> 2.5;
             default -> 0;
         };
-        xPos -= 1.5;//coef;
+        image.setX(image.getX() - coef);
     }
 
     public double getxPos() {
@@ -34,7 +35,7 @@ public class Cactus {
         return generation_height;
     }
 
-    public Image getImage() {
+    public ImageView image() {
         return image;
     }
 
