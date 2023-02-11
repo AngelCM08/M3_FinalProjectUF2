@@ -4,14 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b75048af-fa27-4d5d-b868-2d99ddbf9123" name="Changes" comment="First commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tests/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_2_23_15_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_2_23_15_16__Changes_.xml" afterDir="false" />
+    <list default="true" id="b75048af-fa27-4d5d-b868-2d99ddbf9123" name="Changes" comment="WIP">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/landscape.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/m3_finalprojectuf2/Cactus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/m3_finalprojectuf2/Cactus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/m3_finalprojectuf2/CactusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/m3_finalprojectuf2/CactusController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/m3_finalprojectuf2/TRexApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/m3_finalprojectuf2/TRexApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/big_cactus.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/big_cactus.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cactus1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cactus1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cactus2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cactus2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cactus3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cactus3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cactus4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cactus4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cactus5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cactus5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cactus6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cactus6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/med_cactus.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/med_cactus.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tRex.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tRex.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +68,7 @@
       <recent name="com.example.m3_finalprojectuf2" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TRexApplication">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="tests.Main" />
       <module name="M3_FinalProjectUF2" />
@@ -124,8 +132,26 @@
       <option name="project" value="LOCAL" />
       <updated>1675699634093</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="WIP">
+      <created>1676073985634</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676073985634</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

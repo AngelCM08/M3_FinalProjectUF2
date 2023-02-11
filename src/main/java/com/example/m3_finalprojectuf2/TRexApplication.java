@@ -15,26 +15,25 @@ import javafx.stage.Stage;
 
 public class TRexApplication extends Application {
     //Coding elements
-    public final int YMAX = 1100;
-    public CactusController cactusController = new CactusController(YMAX);
+    public final int ANCHO_MAX = 1100;
+    public CactusController cactusController = new CactusController();
     Cactus cactus;
     boolean stop = false;
     public int level = 1;
     private boolean isJumping = false;
     private double jumpVelocity = 0.0;
-    private double gravity = 0.6;
+    private double gravity = 0.5;
     private int score = 0;
 
     //Graphic elements
     Pane root = new Pane();
-    Scene scene = new Scene(root, YMAX, 300);
-    ImageView bg = new ImageView(new Image("landscape.jpg",YMAX, 300, false, false));
+    Scene scene = new Scene(root, ANCHO_MAX, 400);
+    ImageView bg = new ImageView(new Image("landscape.png", ANCHO_MAX, 400, false, false));
     ImageView tRex = new ImageView(new Image("tRex.png", 90, 90, false, false));
 
     @Override
     public void start(Stage stage){
-        cactusController.newCactus();
-        cactus = cactusController.getCactus();
+        cactus = cactusController.changeImage(ANCHO_MAX);
 
         stage.setTitle("Chrome T-Rex");
         stage.setScene(scene);
@@ -42,25 +41,25 @@ public class TRexApplication extends Application {
         root.getChildren().add(bg);
 
         tRex.setX(100);
-        tRex.setY(150);
+        tRex.setY(220);
         root.getChildren().add(tRex);
 
-        cactus.image().setX(cactus.getxPos());
+        cactus.image().setX(ANCHO_MAX);
         cactus.image().setY(cactus.getGeneration_height());
         root.getChildren().add(cactus.image());
 
         scene.setOnKeyPressed(event -> {
             if (event.getCode().equals(KeyCode.SPACE) && !isJumping) {
                 isJumping = true;
-                jumpVelocity = -13.5;
+                jumpVelocity = -20;
             }
         });
 
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
                 if(!stop){
-                    if(tRex.getY() > 150){
-                        tRex.setY(150);
+                    if(tRex.getY() > 220){
+                        tRex.setY(220);
                         jumpVelocity = 0.0;
                         isJumping = false;
                     }
@@ -77,23 +76,22 @@ public class TRexApplication extends Application {
         if (isJumping) {
             jumpVelocity += gravity;
             tRex.setY(tRex.getY() + jumpVelocity);
-            if (tRex.getY() >= 300.0) {
-                tRex.setY(300.0);
+            if (tRex.getY() >= 400.0) {
+                tRex.setY(400.0);
             }
         }
 
         // Actualizar la posición del obstáculo
         cactus.decreaseXPos(level);
-        if(cactus.getxPos() <= -cactus.image().getImage().getWidth()) {
-            cactusController.newCactus();
-            cactus = cactusController.getCactus();
+        if(cactus.image().getX() <= -cactus.image().getImage().getWidth()) {
+            cactus = cactusController.changeImage(ANCHO_MAX);
         }
 
         // Detectar colisiones
-        if (tRex.getBoundsInParent().intersects(cactus.image().getBoundsInParent())) {
+        /*if (tRex.getBoundsInParent().intersects(cactus.image().getBoundsInParent())) {
             stop = true;
             System.out.println("Game Over! Score: " + score);
-        }
+        }*/
     }
     
     public static void main(String[] args) {

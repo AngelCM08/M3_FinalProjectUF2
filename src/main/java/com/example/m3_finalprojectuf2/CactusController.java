@@ -17,21 +17,19 @@ public class CactusController {
                 new ImageView(new Image("med_cactus.jpg", 120, 130, false, false)),
                 new ImageView(new Image("big_cactus.jpg", 160, 130, false, false))
     };
-    public int[] cactus_generation_height = {110, 120, 120, 100, 100, 90, 110, 110};
+    public int[] cactus_generation_height = {180, 190, 190, 170, 170, 160, 180, 180};
     public Cactus[] cactus = new Cactus[cactuses_img.length];
 
-    public CactusController(int YMAX) {
+    public CactusController() {
         for (int i = 0; i < cactuses_img.length; i++) {
-            cactus[i] = new Cactus(YMAX, cactus_generation_height[i], cactuses_img[i]);
+            cactus[i] = new Cactus(cactus_generation_height[i], cactuses_img[i]);
         }
     }
 
-    public void newCactus(){
+    public Cactus changeImage(int ANCHO_MAX) {
         Random rd = new Random();
         cactus_index = rd.nextInt(8);
-    }
-
-    public Cactus getCactus(){
+        cactus[cactus_index].image().setX(ANCHO_MAX);
         return cactus[cactus_index];
     }
 }
