@@ -2,6 +2,7 @@ package com.example.m3_finalprojectuf2;
 
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -17,10 +18,9 @@ import java.util.Random;
 
 public class TRexApplication extends Application {
     //Coding elements
-    Random rd = new Random();
     public final int ANCHO_MAX = 1100;
     public CactusController cactusController = new CactusController();
-    Cactus cactus;
+    Node[] cactus = new Node[cactusController.cactus.length];
     boolean stop = false;
     public int level = 1;
     private boolean isJumping = false;
@@ -36,9 +36,7 @@ public class TRexApplication extends Application {
 
     @Override
     public void start(Stage stage){
-        cactus = cactusController.changeImage(ANCHO_MAX);
-        System.out.println(-cactus.image().getImage().getWidth());
-
+        System.out.println(cactusController.cactus[cactusController.cactus_index].image().getFitWidth());
         stage.setTitle("Chrome T-Rex");
         stage.setScene(scene);
 
@@ -48,9 +46,16 @@ public class TRexApplication extends Application {
         tRex.setY(220);
         root.getChildren().add(tRex);
 
-        cactus.image().setX(ANCHO_MAX);
-        cactus.image().setY(cactus.getGeneration_height());
-        root.getChildren().add(cactus.image());
+        for (int i = 0; i < cactusController.cactus.length; i++) {
+            cactus[i] = cactusController.cactus[i].image();
+            root.getChildren().add(cactus[i]);
+        }
+        cactusController.changeImage();
+
+        for (int i = 0; i < cactusController.cactus.length; i++) {
+            cactus[cactusController.cactus_index].setLayoutX(ANCHO_MAX);
+            cactus[cactusController.cactus_index].setLayoutY(cactusController.cactus[cactusController.cactus_index].getGeneration_height());
+        }
 
         scene.setOnKeyPressed(event -> {
             if (event.getCode().equals(KeyCode.SPACE) && !isJumping) {
@@ -86,19 +91,19 @@ public class TRexApplication extends Application {
         }
 
         // Actualizar la posición del obstáculo
-        cactus.decreaseXPos(level);
-        //System.out.println("imageX: "+cactus.image().getX());
-        if(cactus.image().getX() <= -cactus.image().getImage().getWidth()) {
-            cactusController.cactus_index = rd.nextInt(8);
-            cactus = cactusController.changeImage(ANCHO_MAX);
+        cactus[cactusController.cactus_index].setLayoutX(cactusController.decreaseXPos(level));
+        if(cactus[cactusController.cactus_index].getLayoutX() <= -cactusController.getImageWidth()) {
+            /*cactus = cactusController.changeImage();
+            cactus.image().setX(ANCHO_MAX);
             cactus.image().setY(cactus.getGeneration_height());
+            root.getChildren().add(cactus.image());*/
         }
 
         // Detectar colisiones
-        /*if (tRex.getBoundsInParent().intersects(cactus.image().getBoundsInParent())) {
+        if (tRex.getBoundsInParent().intersects(cactus[cactusController.cactus_index].getBoundsInParent())) {
             stop = true;
             System.out.println("Game Over! Score: " + score);
-        }*/
+        }
     }
     
     public static void main(String[] args) {

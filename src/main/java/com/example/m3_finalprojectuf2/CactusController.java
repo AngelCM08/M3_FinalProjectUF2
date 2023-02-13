@@ -8,17 +8,18 @@ import java.util.Random;
 public class CactusController {
     int cactus_index;
     private final ImageView[] cactuses_img = {
-                new ImageView(new Image("cactus1.jpg", 50, 130, false, false)),
-                new ImageView(new Image("cactus2.jpg", 50, 120, false, false)),
-                new ImageView(new Image("cactus3.jpg", 50, 120, false, false)),
-                new ImageView(new Image("cactus4.jpg", 70, 140, false, false)),
-                new ImageView(new Image("cactus5.jpg", 70, 140, false, false)),
-                new ImageView(new Image("cactus6.jpg", 70, 150, false, false)),
-                new ImageView(new Image("med_cactus.jpg", 120, 130, false, false)),
-                new ImageView(new Image("big_cactus.jpg", 160, 130, false, false))
+                new ImageView(new Image("cactus1.png", 50, 130, false, false)),
+                new ImageView(new Image("cactus2.png", 50, 120, false, false)),
+                new ImageView(new Image("cactus3.png", 50, 120, false, false)),
+                new ImageView(new Image("cactus4.png", 70, 140, false, false)),
+                new ImageView(new Image("cactus5.png", 70, 140, false, false)),
+                new ImageView(new Image("cactus6.png", 70, 150, false, false)),
+                new ImageView(new Image("med_cactus.png", 120, 130, false, false)),
+                new ImageView(new Image("big_cactus.png", 160, 130, false, false))
     };
     public int[] cactus_generation_height = {180, 190, 190, 170, 170, 160, 180, 180};
     public Cactus[] cactus = new Cactus[cactuses_img.length];
+    Random rd = new Random();
 
     public CactusController() {
         for (int i = 0; i < cactuses_img.length; i++) {
@@ -26,9 +27,25 @@ public class CactusController {
         }
     }
 
-    public Cactus changeImage(int ANCHO_MAX) {
+    //Función para reducir la X del la imagen y moverse.
+    public double decreaseXPos(int level){
+        return switch (level) {
+            case 1 -> 0.5;
+            case 2 -> 0.8;
+            case 3 -> 1;
+            case 4 -> 1.5;
+            case 5 -> 2.5;
+            default -> 0;
+        };
+    }
+
+    public double getImageWidth(){
+        return cactus[cactus_index].image().getFitWidth();
+    }
+
+    public Cactus changeImage() {
+        cactus_index = rd.nextInt(8);
         System.out.println(cactus_index);
-        cactus[cactus_index].image().setX(ANCHO_MAX);
         return cactus[cactus_index];
     }
 }
