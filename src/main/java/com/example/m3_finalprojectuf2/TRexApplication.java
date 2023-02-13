@@ -1,27 +1,31 @@
 package com.example.m3_finalprojectuf2;
 
 import javafx.animation.AnimationTimer;
+import javafx.animation.PauseTransition;
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.Label;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.util.Random;
 
 public class TRexApplication extends Application {
     //Coding elements
-    Random rd = new Random();
     public final int ANCHO_MAX = 1100;
     public CactusController cactusController = new CactusController();
     Cactus cactus;
     boolean stop = false;
+    boolean levelUp = false;
     public int level = 1;
     private boolean isJumping = false;
     private double jumpVelocity = 0.0;
@@ -32,31 +36,53 @@ public class TRexApplication extends Application {
     Pane root = new Pane();
     Scene scene = new Scene(root, ANCHO_MAX, 400);
     ImageView bg = new ImageView(new Image("landscape.png", ANCHO_MAX, 400, false, false));
+    Text scoreText = new Text("Score: 0");
     ImageView tRex = new ImageView(new Image("tRex.png", 90, 90, false, false));
+    Label levelUpLabel = new Label("Level difficulty up!");
+    Label finalScore = new Label();
 
     @Override
     public void start(Stage stage){
-        cactus = cactusController.changeImage(ANCHO_MAX);
-        System.out.println(-cactus.image().getImage().getWidth());
-
         stage.setTitle("Chrome T-Rex");
         stage.setScene(scene);
 
         root.getChildren().add(bg);
 
+        scoreText.setLayoutX(10);
+        scoreText.setLayoutY(30);
+        root.getChildren().add(scoreText);
+
         tRex.setX(100);
         tRex.setY(220);
         root.getChildren().add(tRex);
 
+        cactus = cactusController.changeImage(ANCHO_MAX);
         cactus.image().setX(ANCHO_MAX);
         cactus.image().setY(cactus.getGeneration_height());
         root.getChildren().add(cactus.image());
+
+        levelUpLabel.setStyle("-fx-font-size: 24; -fx-text-fill: white; -fx-font-weight: bold;");
+        levelUpLabel.setEffect(new DropShadow(10, Color.BLACK));
+        levelUpLabel.setLayoutX(450);
+        root.getChildren().add(levelUpLabel);
+
+        finalScore.setStyle("-fx-font-size: 24; -fx-text-fill: white; -fx-font-weight: bold;");
+        finalScore.setEffect(new DropShadow(10, Color.BLACK));
+        finalScore.setLayoutX(450);
+        finalScore.setLayoutY(190);
+        root.getChildren().add(finalScore);
+        finalScore.setVisible(false);
 
         scene.setOnKeyPressed(event -> {
             if (event.getCode().equals(KeyCode.SPACE) && !isJumping) {
                 isJumping = true;
                 jumpVelocity = -7;
             }
+        });
+
+        PauseTransition pause = new PauseTransition(Duration.seconds(2));
+        pause.setOnFinished(event -> {
+            root.getChildren().remove(levelUpLabel);
         });
 
         new AnimationTimer() {
@@ -68,11 +94,39 @@ public class TRexApplication extends Application {
                         isJumping = false;
                     }
                     update();
-                }else this.stop();
+                    checkScore();
+                    if(levelUp) {
+                        pause.play();
+                        levelUp = false;
+                    }
+                }else {
+                    finalScore.setText("Final Score: "+score);
+                    finalScore.setVisible(true);
+                    this.stop();
+                }
             }
-        }.start();       
-        
+        }.start();
+
         stage.show();
+    }
+
+    private void checkScore() {
+        scoreText.setText("Score: " + score);
+        if(score < 500 && level != 1) {
+            level = 1;
+        }else if(score < 1000 && level != 2) {
+            level = 2;
+            levelUp = true;
+        }else if(score < 1750 && level != 3) {
+            level = 3;
+            levelUp = true;
+        }else if(score < 3000 && level != 4) {
+            level = 4;
+            levelUp = true;
+        }else if(score < 5000 && level != 5) {
+            level = 5;
+            levelUp = true;
+        }
     }
 
     private void update() {
@@ -87,20 +141,22 @@ public class TRexApplication extends Application {
 
         // Actualizar la posición del obstáculo
         cactus.decreaseXPos(level);
-        //System.out.println("imageX: "+cactus.image().getX());
         if(cactus.image().getX() <= -cactus.image().getImage().getWidth()) {
-            cactusController.cactus_index = rd.nextInt(8);
+            root.getChildren().remove(cactus.image());
             cactus = cactusController.changeImage(ANCHO_MAX);
+            cactus.image().setX(ANCHO_MAX);
             cactus.image().setY(cactus.getGeneration_height());
+            root.getChildren().add(cactus.image());
+
+            score += 100;
         }
 
         // Detectar colisiones
-        /*if (tRex.getBoundsInParent().intersects(cactus.image().getBoundsInParent())) {
+        if (tRex.getBoundsInParent().intersects(cactus.image().getBoundsInParent())) {
             stop = true;
-            System.out.println("Game Over! Score: " + score);
-        }*/
+        }
     }
-    
+
     public static void main(String[] args) {
         launch();
     }

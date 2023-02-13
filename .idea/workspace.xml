@@ -5,10 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b75048af-fa27-4d5d-b868-2d99ddbf9123" name="Changes" comment="WIP">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_02_2023_21_43_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_02_2023_21_43__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_02_2023_22_36_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_02_2023_22_36__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Chromium_T-Rex-obstacle-large-sprite.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/big_cactus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/cactus1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/cactus2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/cactus3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/cactus4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/cactus5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/cactus6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/med_cactus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_2_23_15_16_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_2_23_15_16__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/m3_finalprojectuf2/Cactus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/m3_finalprojectuf2/Cactus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/m3_finalprojectuf2/CactusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/m3_finalprojectuf2/CactusController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/m3_finalprojectuf2/TRexApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/m3_finalprojectuf2/TRexApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/big_cactus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cactus1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cactus2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cactus3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cactus4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cactus5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cactus6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cactuses.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/landscape.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/med_cactus.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +49,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="SOFT" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -135,7 +161,28 @@
       <option name="project" value="LOCAL" />
       <updated>1676079698475</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="WIP">
+      <created>1676127647547</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676127647547</updated>
+    </task>
+    <task id="LOCAL-00007" summary="WIP">
+      <created>1676304532447</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1676304532447</updated>
+    </task>
+    <task id="LOCAL-00008" summary="WIP">
+      <created>1676304542075</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1676304542075</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

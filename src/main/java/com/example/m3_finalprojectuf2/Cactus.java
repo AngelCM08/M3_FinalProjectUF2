@@ -14,14 +14,14 @@ public class Cactus {
     //Función para reducir la X del la imagen y moverse.
     public void decreaseXPos(int level){
         double coef = switch (level) {
-            case 1 -> 0.5;
-            case 2 -> 0.8;
-            case 3 -> 1;
-            case 4 -> 1.5;
-            case 5 -> 2.5;
+            case 1 -> 2.25;
+            case 2 -> 2.75;
+            case 3 -> 3.5;
+            case 4 -> 5;
+            case 5 -> 7.5;
             default -> 0;
         };
-        image.setX(image.getX() - 3);
+        image.setX(image.getX() - coef);
     }
 
     public int getGeneration_height() {
